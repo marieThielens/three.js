@@ -5,7 +5,7 @@ three.js est une bibliothèque JavaScript qui va nous permettre de faire de la 3
 ## sources :
  - Le site officiel : [https://threejs.org/](https://threejs.org/).
  - Le code source : [se trouve sur github](https://github.com/mrdoob/three.js/).
- - Des exemples : [github](https://github.com/mrdoob/three.js/tree/dev/examples) , [site officiel].
+ - Des exemples : [github](https://github.com/mrdoob/three.js/tree/dev/examples) , [site officiel](https://threejs.org/examples/).
 
 ## Pour l'utiliser : 
 - Vous avez besoin d'importer la bibliothèque. Copiez le contenu de [ce lien](https://threejs.org/build/three.min.js) dans un fichier three.min.js que vous aurez crée. 
