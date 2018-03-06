@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+</head>
+<body>
+<script src="three.min.js"></script>    
+<script>
+
+var renderer, scene, camera, mesh;
+
+init();
+animate();
+
+function init() {
+
+// on initialise la camera que l’on place ensuite sur la scène
+camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10 );
+camera.position.z = 1;
+// on initialise la scène
+scene = new THREE.Scene();
+
+// on créé un  cube auquel on défini un matériau puis on l’ajoute à la scène 
+geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+material = new THREE.MeshNormalMaterial();
+
+mesh = new THREE.Mesh( geometry, material );
+scene.add( mesh );
+
+// on initialise le moteur de rendu
+renderer = new THREE.WebGLRenderer( { antialias: true } );
+renderer.setSize( window.innerWidth, window.innerHeight );
+document.body.appendChild( renderer.domElement ); // on le place dans le body
+//   document.getElementById('container').appendChild(renderer.domElement); (si on place dans une div container)
+}
+
+function animate() { // Faire tourner la forme
+// on appel la fonction animate() récursivement à chaque frame
+requestAnimationFrame( animate );
+// on fait tourner le cube sur ses axes x et y
+mesh.rotation.x += 0.01;
+mesh.rotation.y += 0.02;
+// on effectue le rendu de la scène
+renderer.render( scene, camera );
+}
+</script>
+</body>
+</html>
