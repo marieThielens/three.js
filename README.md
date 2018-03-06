@@ -27,41 +27,41 @@ three.js est une bibliothèque JavaScript qui va nous permettre de faire de la 3
       
 - Nous allons initialiser notre scène avec le code suivant :
 
-        var renderer, scene, camera, mesh;
+       var renderer, scene, camera, mesh;
 
-        init();
-        animate();
+       init();
+       animate();
 
-        function init(){
-            // on initialise le moteur de rendu
-            renderer = new THREE.WebGLRenderer();
+       function init() {
 
-            // si WebGL ne fonctionne pas sur votre navigateur vous pouvez utiliser le moteur de rendu Canvas à la place
-            // renderer = new THREE.CanvasRenderer();
-            renderer.setSize( window.innerWidth, window.innerHeight );
-            document.getElementById('container').appendChild(renderer.domElement);
+       // on initialise la camera que l’on place ensuite sur la scène
+       camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10 );
+       camera.position.z = 1;
+       // on initialise la scène
+       scene = new THREE.Scene();
 
-            // on initialise la scène
-            scene = new THREE.Scene();
+       // on créé un  cube auquel on défini un matériau puis on l’ajoute à la scène 
+       geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+       material = new THREE.MeshNormalMaterial();
 
-            // on initialise la camera que l’on place ensuite sur la scène
-            camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 10000 );
-            camera.position.set(0, 0, 1000);
-            scene.add(camera);
+       mesh = new THREE.Mesh( geometry, material );
+       scene.add( mesh );
 
-            // on créé un  cube au quel on définie un matériau puis on l’ajoute à la scène 
-            var geometry = new THREE.CubeGeometry( 200, 200, 200 );
-            var material = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
-            mesh = new THREE.Mesh( geometry, material );
-            scene.add( mesh );
-        }
+       // on initialise le moteur de rendu
+       renderer = new THREE.WebGLRenderer( { antialias: true } );
+       renderer.setSize( window.innerWidth, window.innerHeight );
+       document.body.appendChild( renderer.domElement ); // on le place dans le body
+       //   document.getElementById('container').appendChild(renderer.domElement); (si on place dans une div container)
+       }
 
-        function animate(){ // Faire tourner la forme
-            // on appel la fonction animate() récursivement à chaque frame
-            requestAnimationFrame( animate );
-            // on fait tourner le cube sur ses axes x et y
-            mesh.rotation.x += 0.01;
-            mesh.rotation.y += 0.02;
-            // on effectue le rendu de la scène
-            renderer.render( scene, camera );
-        }
+       function animate() { // Faire tourner la forme
+       // on appel la fonction animate() récursivement à chaque frame
+       requestAnimationFrame( animate );
+       // on fait tourner le cube sur ses axes x et y
+       mesh.rotation.x += 0.01;
+       mesh.rotation.y += 0.02;
+       // on effectue le rendu de la scène
+       renderer.render( scene, camera );
+       }
+       
+Résultat : 
