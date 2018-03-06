@@ -8,6 +8,24 @@
    
 </head>
 <body>
+    <style>
+    body{
+        display:flex;
+        justify-content:space-around;
+    }
+    canvas{
+        width:100%!important;
+        height:100%!important;
+    }
+    #container{
+        width:50%;
+        height:50%;
+    }
+    </style>
+
+<div id="container"></div>
+
+
 <script src="three.min.js"></script>    
 <script>
 
@@ -18,7 +36,8 @@ animate();
 
 function init() {
 
-// on initialise la camera que l’on place ensuite sur la scène
+// on initialise la camera que l’on place ensuite sur la scène 
+// 70 = recul de la camera, si nombre petit grand zoom (vue de près)
 camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10 );
 camera.position.z = 1;
 // on initialise la scène
@@ -34,8 +53,8 @@ scene.add( mesh );
 // on initialise le moteur de rendu
 renderer = new THREE.WebGLRenderer( { antialias: true } );
 renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement ); // on le place dans le body
-//   document.getElementById('container').appendChild(renderer.domElement); (si on place dans une div container)
+// document.body.appendChild( renderer.domElement ); // on le place dans le body
+document.getElementById('container').appendChild(renderer.domElement); //(si on place dans une div container)
 }
 
 function animate() { // Faire tourner la forme
