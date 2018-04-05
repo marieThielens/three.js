@@ -14,35 +14,35 @@ three.js est une bibliothèque JavaScript qui va nous permettre de faire de la 3
 - Vous avez besoin d'importer la bibliothèque. Copiez le contenu de [ce lien](https://threejs.org/build/three.min.js) dans un fichier three.min.js que vous aurez crée. 
 
 - Inclure la librairie avant la fermeture du body dans votre HTML :
-
-      `<script src="js/three.min.js"></script>`
+`<script src="js/three.min.js"></script>`
+  
   ou 
 
-  ```JS
-      <script src="http://mrdoob.github.com/three.js/build/three.min.js"></script> /*(le lien en ligne) */
+```JS
+<script src="http://mrdoob.github.com/three.js/build/three.min.js"></script> /*(le lien en ligne) */
 
 ```
 
 - Faire notre script après la librairie qu'on vient de copier :
 
-    ```HTML
-         <script type="text/javascript">
-         <!-- C'est ici que nous utiliserons Three.js -->
-         </script>
-      </body>
-      </html>
+```HTML
+<script type="text/javascript">
+/* C'est ici que nous utiliserons Three.js */
+</script>
+</body>
+</html>
 
-      ```
-      
+```
+
 - Nous allons initialiser notre scène avec le code suivant :
 
-   ```JS
-       var renderer, scene, camera, mesh;
+```JS
+      var renderer, scene, camera, mesh;
 
-       init();
-       animate();
+      init();
+      animate();
 
-       function init() {
+      function init() {
 
        // on initialise la camera que l’on place ensuite sur la scène
        camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10 );
