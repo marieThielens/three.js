@@ -3,31 +3,40 @@
 three.js est une bibliothèque JavaScript qui va nous permettre de faire de la 3D. 
 
 ## sources :
+
  - Le site officiel : [https://threejs.org/](https://threejs.org/).
  - Le code source : [se trouve sur github](https://github.com/mrdoob/three.js/).
  - Des exemples : [github](https://github.com/mrdoob/three.js/tree/dev/examples) , [site officiel](https://threejs.org/examples/).
--  tuto : [pdf](http://lsc.univ-evry.fr/~didier/home/lib/exe/fetch.php?media=cours:ig:threejs.pdf).
+- tuto : [pdf](http://lsc.univ-evry.fr/~didier/home/lib/exe/fetch.php?media=cours:ig:threejs.pdf).
 
 ## Pour l'utiliser : 
+
 - Vous avez besoin d'importer la bibliothèque. Copiez le contenu de [ce lien](https://threejs.org/build/three.min.js) dans un fichier three.min.js que vous aurez crée. 
 
 - Inclure la librairie avant la fermeture du body dans votre HTML :
-      
-      <script src="js/three.min.js"></script>    
+
+      `<script src="js/three.min.js"></script>`
   ou 
-  
-      <script src="http://mrdoob.github.com/three.js/build/three.min.js"></script> (le lien en ligne)
+
+  ```JS
+      <script src="http://mrdoob.github.com/three.js/build/three.min.js"></script> /*(le lien en ligne) */
+
+```
 
 - Faire notre script après la librairie qu'on vient de copier :
 
+    ```HTML
          <script type="text/javascript">
          <!-- C'est ici que nous utiliserons Three.js -->
          </script>
       </body>
       </html>
+
+      ```
       
 - Nous allons initialiser notre scène avec le code suivant :
 
+   ```JS
        var renderer, scene, camera, mesh;
 
        init();
@@ -64,6 +73,8 @@ three.js est une bibliothèque JavaScript qui va nous permettre de faire de la 3
        // on effectue le rendu de la scène
        renderer.render( scene, camera );
        }
-       
+```
+
 ## Résultat 
+
 - Si tout va bien vous devriez voir [ça](https://jsfiddle.net/f2Lommf5/). 

@@ -8,7 +8,7 @@
    
 </head>
 <body>
-    <style>
+    <!-- <style>
     body{
         display:flex;
         justify-content:space-around;
@@ -21,7 +21,7 @@
         width:50%;
         height:50%;
     }
-    </style>
+    </style> -->
 
 <div id="container"></div>
 
@@ -44,7 +44,7 @@ camera.position.z = 1;
 scene = new THREE.Scene();
 
 // on créé un  cube auquel on défini un matériau puis on l’ajoute à la scène 
-geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.9 );
 material = new THREE.MeshNormalMaterial();
 
 mesh = new THREE.Mesh( geometry, material );
@@ -61,7 +61,7 @@ function animate() { // Faire tourner la forme
 // on appel la fonction animate() récursivement à chaque frame
 requestAnimationFrame( animate );
 // on fait tourner le cube sur ses axes x et y
-mesh.rotation.x += 0.01;
+mesh.rotation.x += 0.00;
 mesh.rotation.y += 0.02;
 // on effectue le rendu de la scène
 renderer.render( scene, camera );
